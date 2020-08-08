@@ -1,4 +1,4 @@
-package config
+package cnftypes
 
 import (
 	"fmt"
@@ -14,7 +14,7 @@ type URL struct {
 func (u *URL) UnmarshalTOML(v interface{}) (err error) {
 	s, ok := v.(string)
 	if !ok {
-		return fmt.Errorf("config.URL: can't unmarshal non string value (%T) into URL", v)
+		return fmt.Errorf("cnftypes.URL: can't unmarshal non string value (%T) into URL", v)
 	}
 
 	u.URL, err = url.Parse(s)

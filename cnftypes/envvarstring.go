@@ -1,4 +1,4 @@
-package config
+package cnftypes
 
 import (
 	"fmt"
@@ -17,7 +17,7 @@ func (e EnvVarString) String() string {
 func (e *EnvVarString) UnmarshalTOML(v interface{}) error {
 	s, ok := v.(string)
 	if !ok {
-		return fmt.Errorf("config.EnvVa: can't unmarshal non string value (%T) into Duration", v)
+		return fmt.Errorf("cnftypes.EnvVarString: can't unmarshal non string value (%T) into Duration", v)
 	}
 
 	*e = EnvVarString(os.ExpandEnv(s))

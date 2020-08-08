@@ -1,4 +1,4 @@
-package config
+package cnftypes
 
 import (
 	"fmt"
@@ -15,7 +15,7 @@ type Duration struct {
 func (d *Duration) UnmarshalTOML(v interface{}) (err error) {
 	s, ok := v.(string)
 	if !ok {
-		return fmt.Errorf("config.Duration: can't unmarshal non string value (%T) into Duration", v)
+		return fmt.Errorf("cnftypes.Duration: can't unmarshal non string value (%T) into Duration", v)
 	}
 
 	d.Duration, err = time.ParseDuration(s)
